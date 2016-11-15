@@ -1,0 +1,293 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,700,300);
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(30,30,30,0.8);
+  background-color: #fff;
+}
+
+.myLotteryApp {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 1000px;
+  height: auto;
+  background-color: rgba(250,250,250,1);
+  padding: 5%;
+  border: 1px solid #000;
+}
+
+/*///////////// WINNER /////////////*/
+
+.winner,
+.participants {
+  position: relative;
+  width: 100%;
+  padding: 5%;
+  border: 1px solid rgba(30,30,30,0.8);
+  overflow: hidden;
+  margin: 30px auto;
+}
+.winner::after {
+  content: "Winner";
+  position: absolute;
+  width: 100px;
+  z-index: 5;
+  top: 50%;
+  left: 10%;
+  color: rgba(30,30,30,0.8);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.winner>span {
+  position: absolute;
+  width: calc(100% - 450px);
+  z-index: 5;
+  top: 50%;
+  left: calc(10% + 100px);
+  color: rgba(30,30,30,0.8);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/*///////// REGISTRATION FORM //////////*/
+
+.registration-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 5%;
+  margin: 30px auto;
+  text-align: center;
+  background-color: rgba(250,250,250,1);
+  border: 1px solid rgba(30,30,30,0.8);
+}
+.registration-wrapper>p {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: rgba(30,30,30,0.8);
+}
+.wrap-input {
+  position: relative;
+  width: calc(100% - 250px);
+  float: right;
+  margin-bottom: 10px;
+}
+.wrap-input::before {
+  width: 200px;
+  height: 33px;
+  line-height: 33px;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 100%;
+  text-align: right;
+  padding-right: 50px;
+}
+.wrap-name-string::before {
+  content: "Name";
+}
+.wrap-surname-string::before {
+  content: "Surname";
+}
+.wrap-email-string::before {
+  content: "E-mail";
+}
+.wrap-phone-string::before {
+  content: "Phone";
+}
+.registration-block {
+    position: relative;
+    z-index: 25;
+    width: 100%;
+    min-height: 265px;
+    height: auto;
+    margin: 30px 0;
+}
+.registration-block input[type='email'],
+.name-string,
+.surname-string,
+.registration-block input[type='phone'],
+.registration-block select,
+.register {
+    position: relative;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    width: 100%;
+    height: auto;
+    padding: 7px 10px;
+    text-align: left;
+    white-space: pre;
+    color: rgba(1,1,1,1);
+    margin: 0;
+    outline: none;
+    float: right;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.name-string,
+.surname-string,
+.email-string,
+.phone-string {
+  border: 1px solid rgba(60,60,60,1);
+}
+
+.registration-block input[type='email']:hover,
+.name-string:hover,
+.surname-string:hover,
+.registration-block input[type='phone']:hover,
+.registration-block select:hover {
+    background-color: rgba(200, 200, 200, 0.5);
+}
+input.name,
+input.surname {
+	text-transform: capitalize;
+}
+
+::-webkit-input-placeholder {color: rgba(60,60,60,1);}
+::-moz-placeholder          {color: rgba(60,60,60,1);}
+:-moz-placeholder           {color: rgba(60,60,60,1);}
+:-ms-input-placeholder      {color: rgba(60,60,60,1);}
+
+.register {
+  display: block;
+  width: 200px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid rgba(30,30,30,0.8);
+  text-align: center;
+  line-height: 45px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(30,30,30,0.8);
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  clear: both;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.register:hover {
+  border: 1px solid rgba(1,1,1,1);
+  color: rgba(1,1,1,1);
+  background-color: rgba(200, 200, 200, 0.5);
+}
+.js-submit {
+  margin-top: 5%;
+}
+
+/*/////////////////////////////////////////////*/
+
+.registered-participants {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid rgba(30,30,30,0.8);
+  vertical-align: top;
+}
+.participants {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.participant-name-column,
+.participant {
+  position: relative;
+  width: 100%;
+  float: left;
+  margin: 10px 0;
+  text-align: left;
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-size: 0;
+}
+.name-column {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 18%;
+  height: auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  color: rgba(30,30,30,0.8);
+  text-align: left;
+}
+.participant-column {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 18%;
+  text-align: left;
+}
+.participant-column span,
+.participant-column input {
+  display: block;
+  width: 85%;
+  font-size: 15px;
+  padding: 2px 0;
+}
+button {
+  font-size: 10px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.worning {
+  border: 1px solid #ff7800;
+  background-color: rgba(250,250,250,1);
+}
+.js-participants {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+input[readonly="readonly"] {
+  border: none;
+  outline: none;
+  background-color: rgba(250,250,250,1);
+}
+.participant button {
+	float: right;
+}
+.participant button.remove {
+	margin-right: 0;
+}
+.js-clear {
+	margin-top: 5%;
+}
+
+.participant {
+  z-index: 1;
+}
