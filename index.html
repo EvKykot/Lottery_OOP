@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+		<title>Lottery</title>
+		
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script type="text/javascript" src="mustache/mustache.js" ></script>
+		
+		<!--[if lt IE 9]>
+			<script>
+				document.createElement('header');
+				document.createElement('nav');
+				document.createElement('section');
+				document.createElement('article');
+				document.createElement('aside');
+				document.createElement('footer');
+				document.createElement('figure');
+				document.createElement('hgroup');
+				document.createElement('menu');
+			</script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+
+		<div id="myLotteryApp" class="myLotteryApp"></div>
+
+
+
+
+		<script id="winnerTemplate" type="text/template">
+			<span class="winner-participant" id="winner-participant">
+				click "winner" to find out who the winner
+			</span>
+			<button class="register winner-participants js-perform-lottery" data-action="viewWinner">winner</button>
+		</script>
+
+
+
+
+		<script type="text/template" id="formTemplate">
+			<div class="registration-wrapper" id="form-registration-wrapper">
+				<p>Registration of participants</p>
+				<form method="post" class="registration-block js-participants-form" id="participants-form">
+					<div class="wrap-input wrap-name-string">
+						<input class="name-string input-val" type="text" placeholder="name" name="name" value="" >
+					</div>
+					<div class="wrap-input wrap-surname-string">
+						<input class="surname-string input-val" type="text" placeholder="surname" name="surname" value="">
+					</div>
+					<div class="wrap-input wrap-email-string">
+						<input class="email-string input-val" type="email" placeholder="e-mail" name="email" value="">
+					</div>
+					<div class="wrap-input wrap-phone-string">
+						<input class="phone-string input-val" type="phone" placeholder="phone" name="phone" value="">
+					</div>
+					<button class="register save-participants js-submit" data-action="addPerson" id="addPerson" type="submit">save</button>
+				</form>
+			</div>
+		</script>
+
+
+
+
+
+		<script type="text/template" id="personsListTemplate">
+			
+				<ul class="participant-name-column">
+					<li class="name-column">name</li>
+					<li class="name-column">surname</li>
+					<li class="name-column">email</li>
+					<li class="name-column">phone</li>
+				</ul>
+			
+		</script>
+
+
+
+		<script type="text/template" id="personTempalate">
+				<li class="participant-column for-name">
+					<input class="name" type="text" name="name" value="{{name}}" readonly="readonly">
+				</li>
+				<li class="participant-column for-surname">
+					<input class="surname" type="text" name="surname" value="{{surname}}" readonly="readonly">
+				</li>
+				<li class="participant-column for-email">
+					<input class="email" type="email" name="email" value="{{email}}" readonly="readonly">
+				</li>
+				<li class="participant-column for-phone">
+					<input class="phone" type="phone" name="phone" value="{{phone}}" readonly="readonly">
+				</li>
+				<button data-action="deletePerson" id="deletePerson" class="remove">X</button>
+				<button data-action="cancelEdit" id="cancelEdit" class="cancelEdit edit">Cancel</button>
+				<button data-action="saveEdit" id="saveEdit" class="saveEdit edit">Save</button type="submit">
+				<button data-action="editPerson" id="editPerson" class="editParticipant noedit">Edit</button>
+		</script>
+		
+<!-- {{elem.name.val}}
+{{elem.surname.val}}
+{{elem.email.val}}
+{{elem.phone.val}} -->
+
+
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
